@@ -100,11 +100,39 @@
 		},
 		{
 			"name": "employees/detail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b19537f-7cd5-46a6-a22c-5ecd081124b5",
+						"exec": [
+							"pm.test(\"response contains [id]\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"});",
+							"",
+							"pm.test(\"response contains [name]\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"name\");",
+							"});",
+							"",
+							"pm.test(\"response contains [email]\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"email\");",
+							"});",
+							"",
+							"",
+							"pm.test(\"response contains [departament]\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"departament\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/employees/detail/1",
+					"raw": "http://localhost:8000/api/employees/detail/4",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -114,7 +142,7 @@
 						"api",
 						"employees",
 						"detail",
-						"1"
+						"4"
 					]
 				}
 			},
@@ -162,10 +190,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": 1,\n    \"name\": \"sillas Henrique lima \",\n    \"email\": \"sillas.lima@globo.com\",\n    \"departament\": \"Compras\"\n}"
+					"raw": "{\n    \"id\": 4,\n    \"name\": \"sillas Henrique lima \",\n    \"email\": \"sillas.lima@globo.com\",\n    \"departament\": \"Compras\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/employees/update/1",
+					"raw": "http://localhost:8000/api/employees/update/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -175,7 +203,7 @@
 						"api",
 						"employees",
 						"update",
-						"1"
+						"5"
 					]
 				}
 			},
@@ -223,7 +251,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"Giany lima\",\n    \"email\": \"giany.lima@globo.com\",\n    \"departament\": \"TI\"\n}"
+					"raw": "{\n    \"name\": \"Mari lima\",\n    \"email\": \"mari.lima@globo.com\",\n    \"departament\": \"TI\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8000/api/employees/create/",
@@ -273,7 +301,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/employees/delete/3",
+					"raw": "http://localhost:8000/api/employees/delete/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -283,7 +311,7 @@
 						"api",
 						"employees",
 						"delete",
-						"3"
+						"5"
 					]
 				}
 			},

@@ -1,6 +1,6 @@
 Clonando o projeto
 
- git clone https://github.com/labs-manager/labs-manager.git
+ git clone https://github.com/sillaslima/labs-manager.git
  cd labs-manager
  python3 -m venv .venv
  source .venv/bin/activate
